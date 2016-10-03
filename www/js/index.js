@@ -28,7 +28,7 @@ function init() {
 function startScan() {
     cordova.plugins.barcodeScanner.scan(
         function (result) {
-            var s = "Result: <a href='" + result.text + "' onClick='OpenLink();'> " + result.text + "</a> <br/>" +
+            var s = "Result: <a href='" + result.text + "' onClick='OpenLink(this);return false;'> " + result.text + "</a> <br/>" +
             "Format: " + result.format + "<br/>" +
             "Cancelled: " + result.cancelled;
             resultDiv.innerHTML = s;
